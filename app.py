@@ -10,6 +10,7 @@ def index():
 
 
 @app.route('/predict', methods=['POST'])
+@cross_origin()
 def runPredict():
     req_data = request.get_json(force=True)
     result = predict(req_data)
